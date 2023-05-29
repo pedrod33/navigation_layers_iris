@@ -27,8 +27,8 @@ public:
 
     for (unsigned int i = 0; i < people_list_.people.size(); i++)
     {
-      people_msgs::Person& person = people_list_.people[i];
-      people_msgs::Person tpt;
+      people_msgs::PersonProxemic& person = people_list_.people[i];
+      people_msgs::PersonProxemic tpt;
       geometry_msgs::PointStamped pt, opt;
 
       try
@@ -91,13 +91,13 @@ public:
     if (cutoff_ >= amplitude_)
       return;
 
-    std::list<people_msgs::Person>::iterator p_it;
+    std::list<people_msgs::PersonProxemic>::iterator p_it;
     costmap_2d::Costmap2D* costmap = layered_costmap_->getCostmap();
     double res = costmap->getResolution();
 
     for (p_it = transformed_people_.begin(); p_it != transformed_people_.end(); ++p_it)
     {
-      people_msgs::Person person = *p_it;
+      people_msgs::PersonProxemic person = *p_it;
       double angle = atan2(person.velocity.y, person.velocity.x) + 1.51;
       double mag = sqrt(pow(person.velocity.x, 2) + pow(person.velocity.y, 2));
       double factor = 1.0 + mag * factor_;

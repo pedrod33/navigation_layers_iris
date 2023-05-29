@@ -39,8 +39,8 @@ void SocialLayer::updateBounds(double origin_x, double origin_y, double origin_z
 
   for (unsigned int i = 0; i < people_list_.people.size(); i++)
   {
-    people_msgs::Person& person = people_list_.people[i];
-    people_msgs::Person tpt;
+    people_msgs::PersonProxemic& person = people_list_.people[i];
+    people_msgs::PersonProxemic tpt;
     geometry_msgs::PointStamped pt, opt;
 
     try

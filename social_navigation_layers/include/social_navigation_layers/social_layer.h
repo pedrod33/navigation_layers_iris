@@ -34,7 +34,7 @@ protected:
   void peopleCallback(const people_msgs::People& people);
   ros::Subscriber people_sub_;
   people_msgs::People people_list_;
-  std::list<people_msgs::Person> transformed_people_;
+  std::list<people_msgs::PersonProxemic> transformed_people_;
   ros::Duration people_keep_time_;
   boost::recursive_mutex lock_;
   bool first_time_;
